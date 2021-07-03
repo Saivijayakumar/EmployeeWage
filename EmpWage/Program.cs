@@ -35,7 +35,6 @@ namespace EmpWage
                         break;
                 }
                 totalEmpHrs += empHrs;
-                //Console.WriteLine("Day#:" + totalWorkingDays + "Emp Hrs : " + empHrs);
             }
             int totalEmpWage = totalEmpHrs * empRatePerHour;
             Console.WriteLine("Total Emp Wage for company : " + company + "is: " + totalEmpWage);
