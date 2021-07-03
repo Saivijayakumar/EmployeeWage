@@ -8,27 +8,9 @@ namespace EmpWage
 {
     class Program
     {
-<<<<<<< HEAD
-        //It is require for UC4
-        public const int FULL_TIME = 1;
-        public const int PART_TIME = 2;
-        public const int EMP_RATE_PER_HR = 20;
-        public const int MAX_WORKING_DAYS = 20;
-        public const int MAX_WORKING_HRS = 100;
-
-        public static void ComputingEmpWage()
-        {
-            //Here Emp means Employee
-            int EmpHours = 0;
-            int EmpWage = 0;
-            int TotalWage = 0;
-            int WrorkingDays = 1;
-            int WorkingHrs = 0;
-=======
         //Initializing Constant Values
         public const int IS_PART_TIME = 1;
         public const int IS_FULL_TIME = 2;
->>>>>>> UC8-MultipleCompanies
 
         public static int computeEmpWage(string company, int empRatePerHour, int numOfWorkingDays,int maxHoursPerMonth)
         {
@@ -54,10 +36,6 @@ namespace EmpWage
                 }
                 totalEmpHrs += empHrs;
             }
-<<<<<<< HEAD
-            Console.WriteLine("WorkingHrs = " + WorkingHrs + " Working days =" + WrorkingDays);
-            Console.WriteLine("Employee wage for " + MAX_WORKING_DAYS + "days = " + TotalWage);
-=======
             int totalEmpWage = totalEmpHrs * empRatePerHour;
             Console.WriteLine("Total Emp Wage for company : " + company + "is: " + totalEmpWage);
             return totalEmpWage;
@@ -66,12 +44,7 @@ namespace EmpWage
         {
             computeEmpWage("Airtel",20,4,10);
             computeEmpWage("Idea", 10, 4, 30);
->>>>>>> UC8-MultipleCompanies
             Console.Read();
-        }
-        static void Main(string[] args)
-        {
-            ComputingEmpWage();
         }
     }
 }
