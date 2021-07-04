@@ -56,9 +56,11 @@ namespace EmpWage
             //Console.WriteLine("Total Emp Wage for company : " + company + " is: " + totalEmpWage);
         }
 
-        public string toString()
+        public void allDetails()
         {
-            return "Total Emp Wage for company : " + this.company + " is : " + this.totalEmpWage;
+            Console.WriteLine("Company name : " + this.company);
+            Console.WriteLine("Total Emp Wage for company  " + this.company + " is : " + this.totalEmpWage);
+            Console.WriteLine("--------------------------------");
         }
     }
 }
