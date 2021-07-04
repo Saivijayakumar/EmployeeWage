@@ -10,16 +10,10 @@ namespace EmpWage
     {
         static void Main(string[] args)
         {
-            EmpWageBuilderObject airtel = new EmpWageBuilderObject("Airtel", 20, 4, 10);
-            EmpWageBuilderObject idea = new EmpWageBuilderObject("Idea", 15, 7, 20);
-            //calling computeEmpWage method
-            airtel.computeEmpWage();
-            //displaying particular company details
-            airtel.allDetails();
-            //calling computeEmpWage method
-            idea.computeEmpWage();
-            //displaying particular company details
-            idea.allDetails();
+            EmpWageBuilderArray empWageBuilder = new EmpWageBuilderArray();
+            empWageBuilder.addCompanyEmpWage("Airtel", 20, 4, 10);
+            empWageBuilder.addCompanyEmpWage("Idea", 15, 7, 20);
+            empWageBuilder.computeEmpWage();
             
             Console.Read();
         }
