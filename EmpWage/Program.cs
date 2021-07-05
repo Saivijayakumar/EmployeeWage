@@ -11,8 +11,8 @@ namespace EmpWage
         static void Main(string[] args)
         {
             EmpWageBuilderArray empWageBuilder = new EmpWageBuilderArray();
-            empWageBuilder.addCompanyEmpWage("Airtel", 20, 4, 10);
-            empWageBuilder.addCompanyEmpWage("Idea", 15, 7, 20);
+            empWageBuilder.addCompanyEmpWage("Airtel", 2, 7, 20);
+            empWageBuilder.addCompanyEmpWage("Idea", 5, 7, 20);
             empWageBuilder.computeEmpWage();
 
             Console.Read();

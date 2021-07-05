@@ -6,13 +6,8 @@ using System.Threading.Tasks;
 
 namespace EmpWage
 {
-    //Using Interface concept
-    public interface IEmpWageBuilderArray
-    {
-        void addCompanyEmpWage(string company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth);
-    }
 
-    class EmpWageBuilderArray : IEmpWageBuilderArray
+    class EmpWageBuilderArray
     {
         //Initializing Constant Values
         public const int IS_PART_TIME = 1;
@@ -44,14 +39,15 @@ namespace EmpWage
         private int computeEmpWage(CompanyEmpWage companyEmpWage)
         {
             //Variables
-            int empHrs = 0, totalEmpHrs = 0, totalWorkingDays = 0;
+            int empHrs = 0, totalEmpHrs = 0, totalWorkingDays = 0, empWage = 0;
             //Computation
+            Console.WriteLine("Company Name : " + companyEmpWage.company);
             while (totalEmpHrs <= companyEmpWage.maxHoursPerMonth && totalWorkingDays < companyEmpWage.numOfWorkingDays)
             {
-                
+
                 Random random = new Random();
                 int empCheck = random.Next(0, 3);
-                //int empCheck = 1;
+                //int empCheck = 2;
                 switch (empCheck)
                 {
                     case IS_PART_TIME:
@@ -64,15 +60,16 @@ namespace EmpWage
                         empHrs = 0;
                         break;
                 }
-                if(empCheck != 0)
+                totalEmpHrs += empHrs;
+                empWage = empHrs * companyEmpWage.empRatePerHour;
+                if (empCheck != 0)
                 {
                     totalWorkingDays++;
+                    Console.WriteLine("Day#: " + totalWorkingDays + " Working Hrs : " + empHrs + " Total Wage Per Day " + empWage);
                 }
-                totalEmpHrs += empHrs;
-                //Console.WriteLine("Day#: " + totalWorkingDays + "Emp Hrs : " + empHrs);
+
             }
             return totalEmpHrs * companyEmpWage.empRatePerHour;
-            //Console.WriteLine("Total Emp Wage for company : " + company + " is: " + totalEmpWage);
         }
     }
 
