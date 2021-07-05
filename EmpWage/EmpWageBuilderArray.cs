@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 
 namespace EmpWage
 {
+    //Using Interface concept
+    public interface IEmpWageBuilderArray
+    {
+        void addCompanyEmpWage(string company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth);
+    }
 
-    class EmpWageBuilderArray
+    class EmpWageBuilderArray : IEmpWageBuilderArray
     {
         //Initializing Constant Values
         public const int IS_PART_TIME = 1;
