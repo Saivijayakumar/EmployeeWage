@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace EmpWage
 {
+
     public class CompanyEmpWage
     {
         public string company;
@@ -20,6 +21,7 @@ namespace EmpWage
             this.empRatePerHour = empRatePerHour;
             this.numOfWorkingDays = numOfWorkingDays;
             this.maxHoursPerMonth = maxHoursPerMonth;
+            this.totalEmpWage = 0;
         }
 
         public void setTotalEmpWage(int totalEmpWage)
@@ -29,7 +31,7 @@ namespace EmpWage
 
         public void allDetails()
         {
-            //Console.WriteLine("Company name : " + this.company);
+            Console.WriteLine("Company name : " + this.company);
             Console.WriteLine("Total Emp Wage for company  " + this.company + " is : " + this.totalEmpWage);
             Console.WriteLine("--------------------------------");
         }
