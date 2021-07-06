@@ -30,9 +30,10 @@ namespace EmpWage
         }
         public void addCompanyEmpWage(string company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth)
         {
-            //every index is object
-            CompanyEmpWage obj = new CompanyEmpWage(company, empRatePerHour, numOfWorkingDays, maxHoursPerMonth);
-            this.companyEmpwage.Add(obj);
+            //creating object for CompanyEmpWage class
+            CompanyEmpWage companyEmp = new CompanyEmpWage(company, empRatePerHour, numOfWorkingDays, maxHoursPerMonth);
+            //adding the object to list
+            this.companyEmpwage.Add(companyEmp);
             
         }
         public void computeEmpWage()
