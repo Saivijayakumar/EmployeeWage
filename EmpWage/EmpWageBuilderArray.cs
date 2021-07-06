@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Collections;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,27 +19,28 @@ namespace EmpWage
         public const int IS_PART_TIME = 1;
         public const int IS_FULL_TIME = 2;
 
-        private int numOfCompany = 0;
-        //creating an array
-        public CompanyEmpWage[] companyEmpWageArray;
+        
+        //creating an array list
+        public ArrayList companyEmpwage;
 
         public EmpWageBuilderArray()
         {
             //giving count
-            this.companyEmpWageArray = new CompanyEmpWage[5];
+            this.companyEmpwage = new ArrayList();
         }
         public void addCompanyEmpWage(string company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth)
         {
             //every index is object
-            companyEmpWageArray[this.numOfCompany] = new CompanyEmpWage(company, empRatePerHour, numOfWorkingDays, maxHoursPerMonth);
-            numOfCompany++;//adding count of companys
+            CompanyEmpWage obj = new CompanyEmpWage(company, empRatePerHour, numOfWorkingDays, maxHoursPerMonth);
+            this.companyEmpwage.Add(obj);
+            
         }
         public void computeEmpWage()
         {
-            for (int i = 0; i < numOfCompany; i++)
+            foreach(CompanyEmpWage wage in companyEmpwage)
             {
-                companyEmpWageArray[i].setTotalEmpWage(this.computeEmpWage(this.companyEmpWageArray[i]));
-                this.companyEmpWageArray[i].allDetails();
+                wage.setTotalEmpWage(this.computeEmpWage(wage));
+                wage.allDetails();
             }
         }
         private int computeEmpWage(CompanyEmpWage companyEmpWage)
