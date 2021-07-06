@@ -24,8 +24,7 @@ namespace EmpWage
         public ArrayList companyEmpwage;
 
         public EmpWageBuilderArray()
-        {
-            //giving count
+        { 
             this.companyEmpwage = new ArrayList();
         }
         public void addCompanyEmpWage(string company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth)
